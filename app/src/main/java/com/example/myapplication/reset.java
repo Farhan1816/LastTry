@@ -25,10 +25,10 @@ public class reset extends Fragment implements View.OnClickListener {
         TextView log = view.findViewById(R.id.textView7);
         log.setOnClickListener(this);
 
-        TextView signup = view.findViewById(R.id.textView8);
+        TextView signup = view.findViewById(R.id.LoginButtonSignUp);
         signup.setOnClickListener(this);
 
-        Button reset = view.findViewById(R.id.button);
+        Button reset = view.findViewById(R.id.SignUp);
         reset.setOnClickListener(this);
 
         return view;
@@ -44,7 +44,7 @@ public class reset extends Fragment implements View.OnClickListener {
             fragmentTransaction.replace(R.id.fragmentContainer, lll);
             fragmentTransaction.commit();
         }
-        else if (v.getId() == R.id.textView8) {
+        else if (v.getId() == R.id.LoginButtonSignUp) {
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -52,7 +52,7 @@ public class reset extends Fragment implements View.OnClickListener {
             fragmentTransaction.replace(R.id.fragmentContainer, sss);
             fragmentTransaction.commit();
         }
-        else if (v.getId() == R.id.button) {
+        else if (v.getId() == R.id.SignUp) {
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

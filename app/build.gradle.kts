@@ -1,8 +1,9 @@
 import com.android.build.api.dsl.Packaging
 
 plugins {
-    id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -62,11 +63,14 @@ android {
     }
 }
 
+
 dependencies {
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:custom-ui:12.0.0")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("com.google.firebase:firebase-auth:22.2.0")
+    implementation ("com.google.firebase:firebase-firestore:24.9.1")
     implementation ("com.google.api-client:google-api-client:1.33.0")
     implementation ("com.google.oauth-client:google-oauth-client-jetty:1.34.1")
     implementation ("com.google.apis:google-api-services-youtube:v3-rev222-1.25.0")
@@ -76,6 +80,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")

@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -40,12 +42,14 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             holder.titleTextView.setTextColor(Color.parseColor("#2AC989"));
             holder.titleTextView.setTextSize(16);
             holder.titleTextView.setTypeface(Typeface.DEFAULT_BOLD);
+            holder.iconImageView.setImageResource(R.drawable.music_icon2);
             holder.itemView.setBackgroundResource(R.drawable.recycle2);
 
         }else{
             holder.titleTextView.setTextColor(Color.parseColor("#FFFFFF"));
             holder.titleTextView.setTextSize(14);
             holder.itemView.setBackgroundResource(R.drawable.recycle);
+            holder.iconImageView.setImageResource(R.drawable.music_icon);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

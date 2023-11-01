@@ -9,7 +9,7 @@
     tools:visibility="visible">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SignUp"
         android:layout_width="303dp"
         android:layout_height="42dp"
         android:background="@drawable/button_custom1"
@@ -26,7 +26,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/FirstName"
         android:layout_width="303dp"
         android:layout_height="42dp"
         android:background="@drawable/text_custom"
@@ -36,7 +36,7 @@
         android:letterSpacing="0"
         android:paddingStart="20dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/SignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:text="  Username:"
         android:textColor="#8A8A8A"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintBottom_toTopOf="@+id/FirstName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent" />
@@ -65,7 +65,7 @@
         android:textColor="#C6C6C6"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintBottom_toTopOf="@+id/FirstName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -78,14 +78,14 @@
         android:text="Don't have an account?"
         android:textColor="#8A8A8A"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintEnd_toStartOf="@+id/LoginButtonSignUp"
         app:layout_constraintHorizontal_bias="0.965"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp"
         app:layout_constraintVertical_bias="0.065" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/LoginButtonSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp"
         app:layout_constraintVertical_bias="0.064" />
 
     <TextView
@@ -106,11 +106,11 @@
         android:clickable="true"
         android:text="Back to login "
         android:textColor="#8A8A8A"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/SignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName"
         app:layout_constraintVertical_bias="0.175" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

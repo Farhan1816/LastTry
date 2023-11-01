@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class login extends Fragment implements View.OnClickListener {
@@ -22,7 +21,7 @@ public class login extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_login, container, false);
-        TextView signup = view.findViewById(R.id.textView8);
+        TextView signup = view.findViewById(R.id.LoginButtonSignUp);
         signup.setOnClickListener(this);
 
         TextView reset = view.findViewById(R.id.textView7);
@@ -32,7 +31,7 @@ public class login extends Fragment implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.textView8) {
+        if (v.getId() == R.id.LoginButtonSignUp) {
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

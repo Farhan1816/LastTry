@@ -31,7 +31,6 @@ public class home extends Fragment implements View.OnClickListener {
     private RecyclerView recyclerView;
     private TextView noMusicTextView;
     NotificationManager notificationManagerOffline;
-
     private ArrayList<AudioModel> songsList;
 
     public home() {
@@ -46,6 +45,13 @@ public class home extends Fragment implements View.OnClickListener {
 
         songsList = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        CenterScrollListener centerScrollListener = new CenterScrollListener(layoutManager);
+        recyclerView.addOnScrollListener(centerScrollListener);
+
+
         noMusicTextView = view.findViewById(R.id.no_songs_text);
         createChannelOffline();
 

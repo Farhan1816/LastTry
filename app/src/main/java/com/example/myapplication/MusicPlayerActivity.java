@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
@@ -24,8 +23,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
     ImageView pausePlay,nextBtn,previousBtn,musicIcon;
     ArrayList<AudioModel> songsList;
     AudioModel currentSong;
-
-    MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
+    static MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
     BroadcastReceiver broadcastReceiver;
     int x=0;
     boolean isPlaying;
@@ -118,6 +116,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
 
         mediaPlayer.reset();
         try {
+            if(youtubePlayer.started)youtubePlayer.Pause();
             mediaPlayer.setDataSource(currentSong.getPath());
             mediaPlayer.prepare();
             mediaPlayer.start();
@@ -128,6 +127,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
         }
     }
 
+    public static void Pause(){mediaPlayer.pause();}
     private void playNextSong(){
         MyMediaPlayer.currentIndex +=1;
         MyMediaPlayer.currentIndex%=songsList.size();

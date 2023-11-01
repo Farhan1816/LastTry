@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "668952207819",
-    "firebase_url": "https://music-master-dbae4-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "music-master-dbae4",
-    "storage_bucket": "music-master-dbae4.appspot.com"
+    "project_number": "153896918274",
+    "project_id": "music-master-final",
+    "storage_bucket": "music-master-final.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:668952207819:android:ac0c78cf3f2719d76bd64e",
+        "mobilesdk_app_id": "1:153896918274:android:d597c2cf262deb2d80361b",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "668952207819-otbbapif5g6ul3ke630fb2vihp29em61.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCbjHNvHg0vOvMXzZc4t7rjIIxDp3alOnw"
+          "current_key": "AIzaSyB16ECFCekIEgnb3KeBdIUfNss2kJ_pyNA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "668952207819-otbbapif5g6ul3ke630fb2vihp29em61.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

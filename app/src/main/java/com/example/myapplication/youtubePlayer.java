@@ -34,10 +34,9 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTube
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.checkerframework.checker.units.qual.A;
-
 public class youtubePlayer extends AppCompatActivity implements Playable{
     private YouTubePlayerView youTubePlayerView;
-    private YouTubePlayer youTubePlayer;
+    private static YouTubePlayer youTubePlayer;
     private YouTubePlayerListener listener;
     private String videoId, Title, Artist;
     private PlayerConstants.PlayerState currentState;
@@ -45,6 +44,7 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
     private SearchResult searchResult;
     boolean isPlaying;
     private BroadcastReceiver broadcastReceiver;
+    static boolean started = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,6 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
         registerReceiver(broadcastReceiver, new IntentFilter("TRACKS_TRACKS"));
         startService(new Intent(getBaseContext(), OnClearFromRecentService.class));
         playVideo(videoId);
-
     }
 
 
@@ -97,23 +96,24 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
     @Override
     protected void onPause()
     {
+        Log.d("debug", "Onpausenow!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         super.onPause();
     }
-
-
+    public static void Pause(){youTubePlayer.pause();}
     @Override
     protected void onDestroy()
     {
+        Log.d("debug", "OnDestroynow!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         super.onDestroy();
         youTubePlayerView.release();
-
     }
     private void playVideo(String videoId) {
 
-        youTubePlayerView.addYouTubePlayerListener(listener= new AbstractYouTubePlayerListener() {
+        youTubePlayerView.addYouTubePlayerListener(listener = new AbstractYouTubePlayerListener() {
 
             @Override
             public void onReady(@NonNull YouTubePlayer Player) {
+                MusicPlayerActivity.Pause();
                 DefaultPlayerUiController defaultPlayerUiController = new DefaultPlayerUiController(youTubePlayerView, Player);
                 youTubePlayerView.setCustomPlayerUi(defaultPlayerUiController.getRootView());
                 youTubePlayer = Player;
@@ -123,45 +123,11 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
             }
 
             @Override
-            public void onStateChange(@androidx.annotation.NonNull YouTubePlayer youTubePlayer, @androidx.annotation.NonNull PlayerConstants.PlayerState playerState){
-                if(youTubePlayerTracker.getState().equals(PlayerConstants.PlayerState.PLAYING))onTrackPause();
+            public void onStateChange(@androidx.annotation.NonNull YouTubePlayer youTubePlayer, @androidx.annotation.NonNull PlayerConstants.PlayerState playerState) {
+                if (youTubePlayerTracker.getState().equals(PlayerConstants.PlayerState.PLAYING))
+                    onTrackPause();
                 else onTrackPlay();
             }
         });
-
-//        IFramePlayerOptions options = new IFramePlayerOptions.Builder().controls(0).build();
-//        youTubePlayerView.initialize(listener, options);
-
-
-
-
-//        listener = new AbstractYouTubePlayerListener() {
-//            @Override
-//            public void onReady(@NonNull YouTubePlayer Player) {
-//                youTubePlayer = Player;
-//                Player.loadVideo(videoId,0);
-//
-////                DefaultPlayerUiController defaultPlayerUiController = new DefaultPlayerUiController(youTubePlayerView, Player);
-////                youTubePlayerView.setCustomPlayerUi(defaultPlayerUiController.getRootView());
-//
-//                youTubePlayer.addListener(youTubePlayerTracker);
-//                isPlaying = true;
-//
-//            }
-//
-//            @Override
-//            public void onStateChange(@androidx.annotation.NonNull YouTubePlayer youTubePlayer, @androidx.annotation.NonNull PlayerConstants.PlayerState playerState){
-//                Log.d("debug", "STATECHANGEDDDDDDDDDDDDDDDDD!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//                if(youTubePlayerTracker.getState().equals(PlayerConstants.PlayerState.PLAYING))onTrackPause();
-//                else onTrackPlay();
-//            }
-//        };
-//
-////        IFramePlayerOptions options = new IFramePlayerOptions.Builder().controls(0).build();
-////        youTubePlayerView.initialize(listener, options);
-
-
     }
-
-
 }

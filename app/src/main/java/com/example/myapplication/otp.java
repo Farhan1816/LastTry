@@ -22,10 +22,10 @@ public class otp extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_otp, container, false);
-        TextView signup = view.findViewById(R.id.textView8);
+        TextView signup = view.findViewById(R.id.LoginButtonSignUp);
         signup.setOnClickListener(this);
 
-        Button reset = view.findViewById(R.id.button);
+        Button reset = view.findViewById(R.id.SignUp);
         reset.setOnClickListener(this);
 
         return view;
@@ -33,7 +33,7 @@ public class otp extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.textView8) {
+        if (v.getId() == R.id.LoginButtonSignUp) {
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -41,7 +41,7 @@ public class otp extends Fragment implements View.OnClickListener {
             fragmentTransaction.replace(R.id.fragmentContainer, sss);
             fragmentTransaction.commit();
         }
-        else if (v.getId() == R.id.button) {
+        else if (v.getId() == R.id.SignUp) {
 
             Toast.makeText(requireContext(),"Password has reset",Toast.LENGTH_SHORT).show();
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();

@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.ViewHolder> {
+public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.ViewHolder>{
 
     private List<SearchResult> searchResults;
 
@@ -45,7 +45,7 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
                 String videoId = searchResult.getId().getVideoId();
                 Intent intent = new Intent(v.getContext(), youtubePlayer.class);
                 intent.putExtra("videoId", videoId);
-                v.getContext().startActivity(intent);
+                v.getContext().startService(intent);
             }
         });
         holder.description.setOnClickListener(new View.OnClickListener(){
@@ -67,7 +67,6 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return searchResults.size();
